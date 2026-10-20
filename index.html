@@ -1,20 +1,232 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#d9ed38"><meta name="description" content="FOLD 01, an interactive furniture design study. Take the chair apart, find your finish and save your configuration."><title>FOLD® · Room for a different point of view.</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23272cda' d='M8 8h48v12H22v9h27v12H22v15H8z'/%3E%3C/svg%3E"><link rel="stylesheet" href="./styles.css?v=20261020.2"></head>
-<body>
-  <a href="#make" class="skip">Skip to chair configuration</a>
-  <div id="scene" role="img" aria-label="Interactive three-dimensional FOLD chair. Drag horizontally to rotate the chair."></div>
-  <div class="fallback" aria-hidden="true"><svg viewBox="0 0 480 520"><path d="M150 75q-45 200 25 225 65 20 165-15l-15 40q-100 55-175 10-50-30-55-120l15-140Z" fill="#2937d4"/><path d="M130 320v145h200V315M295 325v110H165V320" stroke="#979e9c" stroke-width="12" fill="none"/></svg><p>Static preview. Choose a finish and save the full specification.</p></div>
-  <header><a class="wordmark" href="#home" aria-label="Fold home">FOLD<span>®</span></a><span class="header-description">Furniture for a different<br>point of view.</span><button id="details-button" class="underlined">The object <span aria-hidden="true">↗</span></button></header>
-  <main>
-    <section class="chapter hero" id="home"><div class="hero-topline"><span>COLLECTION 001</span><span>ONE CONTINUOUS LINE.</span></div><h1 class="poster-title"><span>GOOD</span><span>FORM.</span></h1><p class="hero-copy">A flat thought.<br>A three-dimensional attitude.<br>The FOLD 01.</p><a class="scroll-link" href="#inside"><span>SCROLL TO UNFOLD</span><span aria-hidden="true">↓</span></a><span class="serial">F / 001</span><div class="corner-label">Keep your point of view.<br>Change your perspective.</div></section>
-    <section class="chapter inside" id="inside"><div class="chapter-copy"><span class="kicker">01 / A LINE BECOMES A CHAIR</span><h2>UN<br><span>FOLD.</span></h2><p>Start with a surface. Give it a curve. The same continuous sheet opens in front of you, then finds its shape again.</p><div class="part-list"><span><b>01</b> One tailored surface</span><span><b>02</b> One continuous shell</span><span><b>03</b> A quietly capable frame</span></div></div></section>
-    <section class="chapter material" id="material"><div class="chapter-copy"><span class="kicker">02 / SHAPE, WITH FEELING.</span><h2>SAME<br>OBJECT.<br><span>NEW<br>ATTITUDE.</span></h2><p>Choose a colour. Move around it. A good object holds its character from every point of view.</p><a class="inline-link" href="#make">MAKE IT YOURS ↘</a></div></section>
-    <section class="chapter make" id="make"><div class="chapter-copy"><span class="kicker">03 / MAKE ROOM FOR IT</span><h2>A GOOD<br>PLACE<br><span>TO LAND.</span></h2><p>Make the FOLD 01 your own. Choose the surface, turn it around and save the details for your moodboard.</p><button id="spec-button" class="big-button">SAVE YOUR FOLD <span aria-hidden="true">↗</span></button><span class="concept-label">An independent furniture concept.<br>No checkout, purchase or reservation.</span></div><footer><a class="footer-logo" href="#home">FOLD®</a><span>Independent concept by BlackStack Studio</span><a href="#home">BACK TO TOP ↑</a></footer></section>
-  </main>
-  <aside class="configurator" aria-label="Configure FOLD chair"><div class="config-heading"><span>FOLD 01</span><span id="finish-name">KLEIN BLUE</span></div><div class="swatches" role="group" aria-label="Chair colour"><button class="swatch blue" data-color="blue" aria-pressed="true" aria-label="Klein blue"><span></span></button><button class="swatch orange" data-color="orange" aria-pressed="false" aria-label="Burnt orange"><span></span></button><button class="swatch chalk" data-color="chalk" aria-pressed="false" aria-label="Warm chalk"><span></span></button><button class="swatch plum" data-color="plum" aria-pressed="false" aria-label="Deep plum"><span></span></button><button id="reset-view" aria-label="Reset chair angle" class="reset-view">↺</button></div><div class="surface-row"><span>SURFACE</span><div role="group" aria-label="Surface material"><button data-material="boucle" aria-pressed="true">BOUCLÉ</button><button data-material="smooth" aria-pressed="false">SOFT TOUCH</button></div></div><div class="config-foot"><span id="drag-hint">DRAG TO CHANGE YOUR POINT OF VIEW</span><span aria-hidden="true">↔</span></div></aside>
-  <nav class="progress-nav" aria-label="Story chapters"><a href="#home" aria-label="The chair" class="active"></a><a href="#inside" aria-label="Construction"></a><a href="#material" aria-label="Material"></a><a href="#make" aria-label="Your configuration"></a></nav>
-  <div id="loading" class="loading"><span>F</span><p>FORMING YOUR POINT OF VIEW</p></div>
-  <dialog id="spec-dialog" aria-labelledby="spec-title"><div class="dialog-top"><span>YOUR DESIGN FILE / 001</span><button class="close" id="close-dialog" aria-label="Close design file">×</button></div><h2 id="spec-title">GOOD<br><span>CHOICE.</span></h2><p>The shape stays. The character is yours.</p><dl><div><dt>OBJECT</dt><dd>FOLD 01 lounge chair</dd></div><div><dt>COLOUR</dt><dd id="spec-color">Klein Blue</dd></div><div><dt>SURFACE</dt><dd id="spec-material">Bouclé</dd></div><div><dt>FRAME</dt><dd>Polished stainless steel</dd></div><div><dt>DIMENSIONS</dt><dd>W 76 × D 82 × H 84 cm</dd></div><div><dt>SEAT HEIGHT</dt><dd>42 cm</dd></div></dl><button id="download-spec" class="big-button">DOWNLOAD SPECIFICATION <span aria-hidden="true">↓</span></button><p class="save-status" id="save-status" role="status"></p><p class="small-print">Design study dimensions. This concept is not in production and is not offered for sale.</p></dialog>
-  <script type="module" src="./app.js?v=20261020.2"></script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#d9ed38" />
+    <meta
+      name="description"
+      content="FOLD 01, an interactive furniture design study. Take the chair apart, find your finish and save your configuration."
+    />
+    <title>FOLD® · Room for a different point of view.</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23272cda' d='M8 8h48v12H22v9h27v12H22v15H8z'/%3E%3C/svg%3E"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.css?v=43196b3a917b52683572b03836b61c68fc9b1abd1d000a12563ebc9cbba85164"
+    />
+  </head>
+  <body>
+    <a href="#make" class="skip">Skip to chair configuration</a>
+    <div
+      id="scene"
+      role="img"
+      aria-label="Interactive three-dimensional FOLD chair. Drag horizontally to rotate the chair."
+    ></div>
+    <div class="fallback" aria-hidden="true">
+      <svg viewBox="0 0 480 520">
+        <path
+          d="M150 75q-45 200 25 225 65 20 165-15l-15 40q-100 55-175 10-50-30-55-120l15-140Z"
+          fill="#2937d4"
+        />
+        <path
+          d="M130 320v145h200V315M295 325v110H165V320"
+          stroke="#979e9c"
+          stroke-width="12"
+          fill="none"
+        />
+      </svg>
+      <p>Static preview. Choose a finish and save the full specification.</p>
+    </div>
+    <header>
+      <a class="wordmark" href="#home" aria-label="Fold home"
+        >FOLD<span>®</span></a
+      ><span class="header-description"
+        >Furniture for a different<br />point of view.</span
+      ><button id="details-button" class="underlined">
+        The object <span aria-hidden="true">↗</span>
+      </button>
+    </header>
+    <main>
+      <section class="chapter hero" id="home">
+        <div class="hero-topline">
+          <span>COLLECTION 001</span><span>ONE CONTINUOUS LINE.</span>
+        </div>
+        <h1 class="poster-title"><span>GOOD</span><span>FORM.</span></h1>
+        <p class="hero-copy">
+          A flat thought.<br />A three-dimensional attitude.<br />The FOLD 01.
+        </p>
+        <a class="scroll-link" href="#inside"
+          ><span>SCROLL TO UNFOLD</span><span aria-hidden="true">↓</span></a
+        ><span class="serial">F / 001</span>
+        <div class="corner-label">
+          Keep your point of view.<br />Change your perspective.
+        </div>
+      </section>
+      <section class="chapter inside" id="inside">
+        <div class="chapter-copy">
+          <span class="kicker">01 / A LINE BECOMES A CHAIR</span>
+          <h2>UN<br /><span>FOLD.</span></h2>
+          <p>
+            Start with a surface. Give it a curve. The same continuous sheet
+            opens in front of you, then finds its shape again.
+          </p>
+          <div class="part-list">
+            <span><b>01</b> One tailored surface</span
+            ><span><b>02</b> One continuous shell</span
+            ><span><b>03</b> A quietly capable frame</span>
+          </div>
+        </div>
+      </section>
+      <section class="chapter material" id="material">
+        <div class="chapter-copy">
+          <span class="kicker">02 / SHAPE, WITH FEELING.</span>
+          <h2>
+            SAME<br />OBJECT.<br /><span>NEW<br />ATTITUDE.</span>
+          </h2>
+          <p>
+            Choose a colour. Move around it. A good object holds its character
+            from every point of view.
+          </p>
+          <a class="inline-link" href="#make">MAKE IT YOURS ↘</a>
+        </div>
+      </section>
+      <section class="chapter make" id="make">
+        <div class="chapter-copy">
+          <span class="kicker">03 / MAKE ROOM FOR IT</span>
+          <h2>A GOOD<br />PLACE<br /><span>TO LAND.</span></h2>
+          <p>
+            Make the FOLD 01 your own. Choose the surface, turn it around and
+            save the details for your moodboard.
+          </p>
+          <button id="spec-button" class="big-button">
+            SAVE YOUR FOLD <span aria-hidden="true">↗</span></button
+          ><span class="concept-label"
+            >An independent furniture concept.<br />No checkout, purchase or
+            reservation.</span
+          >
+        </div>
+        <footer>
+          <a class="footer-logo" href="#home">FOLD®</a
+          ><span>Independent concept by BlackStack Studio</span
+          ><a href="#home">BACK TO TOP ↑</a>
+        </footer>
+      </section>
+    </main>
+    <aside class="configurator" aria-label="Configure FOLD chair">
+      <div class="config-heading">
+        <span>FOLD 01</span><span id="finish-name">KLEIN BLUE</span>
+      </div>
+      <div class="swatches" role="group" aria-label="Chair colour">
+        <button
+          class="swatch blue"
+          data-color="blue"
+          aria-pressed="true"
+          aria-label="Klein blue"
+        >
+          <span></span></button
+        ><button
+          class="swatch orange"
+          data-color="orange"
+          aria-pressed="false"
+          aria-label="Burnt orange"
+        >
+          <span></span></button
+        ><button
+          class="swatch chalk"
+          data-color="chalk"
+          aria-pressed="false"
+          aria-label="Warm chalk"
+        >
+          <span></span></button
+        ><button
+          class="swatch plum"
+          data-color="plum"
+          aria-pressed="false"
+          aria-label="Deep plum"
+        >
+          <span></span></button
+        ><button
+          id="reset-view"
+          aria-label="Reset chair angle"
+          class="reset-view"
+        >
+          ↺
+        </button>
+      </div>
+      <div class="surface-row">
+        <span>SURFACE</span>
+        <div role="group" aria-label="Surface material">
+          <button data-material="boucle" aria-pressed="true">BOUCLÉ</button
+          ><button data-material="smooth" aria-pressed="false">
+            SOFT TOUCH
+          </button>
+        </div>
+      </div>
+      <div class="config-foot">
+        <span id="drag-hint">DRAG TO CHANGE YOUR POINT OF VIEW</span
+        ><span aria-hidden="true">↔</span>
+      </div>
+    </aside>
+    <nav class="progress-nav" aria-label="Story chapters">
+      <a href="#home" aria-label="The chair" class="active"></a
+      ><a href="#inside" aria-label="Construction"></a
+      ><a href="#material" aria-label="Material"></a
+      ><a href="#make" aria-label="Your configuration"></a>
+    </nav>
+    <div id="loading" class="loading">
+      <span>F</span>
+      <p>FORMING YOUR POINT OF VIEW</p>
+    </div>
+    <dialog id="spec-dialog" aria-labelledby="spec-title">
+      <div class="dialog-top">
+        <span>YOUR DESIGN FILE / 001</span
+        ><button class="close" id="close-dialog" aria-label="Close design file">
+          ×
+        </button>
+      </div>
+      <h2 id="spec-title">GOOD<br /><span>CHOICE.</span></h2>
+      <p>The shape stays. The character is yours.</p>
+      <dl>
+        <div>
+          <dt>OBJECT</dt>
+          <dd>FOLD 01 lounge chair</dd>
+        </div>
+        <div>
+          <dt>COLOUR</dt>
+          <dd id="spec-color">Klein Blue</dd>
+        </div>
+        <div>
+          <dt>SURFACE</dt>
+          <dd id="spec-material">Bouclé</dd>
+        </div>
+        <div>
+          <dt>FRAME</dt>
+          <dd>Polished stainless steel</dd>
+        </div>
+        <div>
+          <dt>DIMENSIONS</dt>
+          <dd>W 76 × D 82 × H 84 cm</dd>
+        </div>
+        <div>
+          <dt>SEAT HEIGHT</dt>
+          <dd>42 cm</dd>
+        </div>
+      </dl>
+      <button id="download-spec" class="big-button">
+        DOWNLOAD SPECIFICATION <span aria-hidden="true">↓</span>
+      </button>
+      <p class="save-status" id="save-status" role="status"></p>
+      <p class="small-print">
+        Design study dimensions. This concept is not in production and is not
+        offered for sale.
+      </p>
+    </dialog>
+    <script
+      type="module"
+      src="./app.js?v=e3e32c1bdabc5178a923ac2df571e625c391289b06a251fc96b0fab8e818de33"
+    ></script>
+  </body>
+</html>
