@@ -2,7 +2,7 @@
 
 ## Art direction
 
-Acid chartreuse, Klein blue, compressed heavy typography and a small monospace annotation system make this a furniture campaign rather than a generic commerce template. Large outlined words change the page's density. There is no card grid or decorative dashboard.
+Acid chartreuse, Klein blue, oversized moving poster typography and a small monospace annotation system make this a furniture campaign rather than a generic commerce template. GOOD and FORM split in opposite directions as the central object unfolds. The composition is centred and object-led. There is no card grid or decorative dashboard.
 
 The chair is the main asset. A custom closed ribbon geometry follows a continuous curved profile from high back to rounded seat front. It has actual thickness, a separately modeled upholstered surface, piping, a darker formed shell, tubular metal sled frames, crossbars and glides. All important surfaces are modeled, so the user can rotate the chair beyond the hero angle.
 
@@ -10,16 +10,20 @@ The chair is the main asset. A custom closed ribbon geometry follows a continuou
 
 | Chapter | Model state | Meaning |
 | --- | --- | --- |
-| Take a seat | Full chair, oblique view | An immediately recognizable sculptural product |
-| The inside story | Upholstery and shell lift from the frame | The visual form has a clear construction |
+| Good form | Full chair, centred beneath huge poster type | An immediately recognizable sculptural product |
+| Unfold | Upholstery and shell physically flatten into continuous sheets, then reform | The curve is derived from one surface |
 | Your colour | The chair reunites, camera comes closer | Surface and colour change its character |
 | A good place to land | Full object at a calm distance | Save an actual configured specification |
 
-All transformations are derived from the native scroll coordinate. They remain reversible and can stop midway. Idle time does not advance the chapters. Model layers share the same original curve, which makes their assembly causally readable.
+All transformations are derived from the native scroll coordinate. They remain reversible and can stop midway. Idle time does not advance the chapters. Position and normal morph targets unfold the original meshes into flat sheets on the GPU, retaining the same vertex identities. The layers then return to the original chair, rather than crossfading between unrelated models.
 
 ## Materials and performance
 
-Bouclé detail is a generated canvas bump texture. Smooth finish changes the actual material roughness and bump contribution. The metal frame uses a separate reflective material. Directional shadows and cool fill reveal the continuous section. No large photos, remote models, texture downloads, video or postprocessing passes are required. Pixel ratio is capped, narrow screens use a lower cap, and hidden tabs skip draw work.
+Bouclé detail is a generated canvas bump texture. Smooth finish changes the actual material roughness and bump contribution. The metal frame uses a separate reflective material. Directional shadows and cool fill reveal the continuous section. No large photos, remote models, texture downloads, video or postprocessing passes are required.
+
+Shadow resolution is 1024 rather than 2048, and the shadow map updates only when the mesh shape or user orbit changes. Rendering is event-driven: once scroll and orbit converge, RAF stops. Hidden documents cancel the pending RAF; intersection state stops offscreen work. Desktop DPR starts at a maximum of 1.5, narrow screens at 1.15, with a conservative adaptive minimum of 0.8. The adaptation uses CPU render submission duration, not a claimed GPU or FPS measurement.
+
+Hidden DOM diagnostics expose actual rendered frame count, draw calls, triangles, DPR and active, idle, hidden or offscreen state on documentElement.dataset.
 
 ## Interface
 
