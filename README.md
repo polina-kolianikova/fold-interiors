@@ -25,3 +25,7 @@ FOLD 01 is a design concept, not a real product in production. Its dimensions ar
 See DESIGN.md for the scene map and assets/LICENSES.md for dependency provenance. Physical-device and browser observations must be distinguished from source inspection.
 
 Independent concept by BlackStack Studio, 2026.
+
+## iPhone Safari composition, October2026
+
+The mobile experience now reserves explicit photographic or live-model frames in normal document flow. It does not move the hero object into arbitrary gaps between text blocks. Header, content, forms and footer share the mobile reading grid; desktop retains its cinematic composition. Exact local static font weights avoid variable-default differences across browser engines. Relevant touch interactions, portrait/landscape transitions and live scene visibility were checked in Playwright WebKit. This is browser emulation, not a physical iPhone test.

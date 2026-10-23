@@ -1,0 +1,75 @@
+.mobile-scene-slot { display: none; }
+@media (max-width: 900px), (max-width: 1000px) and (pointer: coarse) {
+  html { scroll-padding-top: 84px; }
+  body { -webkit-text-size-adjust: 100%; }
+  header { padding: calc(14px + env(safe-area-inset-top)) max(22px, env(safe-area-inset-right)) 14px max(22px, env(safe-area-inset-left)); }
+  .chapter { height: auto; min-height: 0; padding: 64px 22px; overflow: visible; }
+  .chapter.hero { padding-top: 116px; padding-bottom: 48px; }
+  .mobile-scene-slot { display: block; width: 100%; height: clamp(280px, 83vw, 380px); margin: 24px 0; pointer-events: none; }
+  #scene, #stage { pointer-events: none; }
+  .chapter p { font-size: 15px; line-height: 1.65; }
+  .chapter-nav, .progress-nav, .vertical-note, .side-note, .corner-label { display: none; }
+  dialog { max-width: calc(100vw - 32px); max-height: calc(100dvh - 40px); overflow-y: auto; }
+  input, textarea, select { font-size: 16px; }
+  button, a, input { touch-action: manipulation; }
+}
+
+@media (max-width: 900px), (max-width: 1000px) and (pointer: coarse) {
+  header { background: var(--acid); }
+  .wordmark { font-size: 38px; }
+  .hero .hero-topline { position: static; font-size: 10px; margin: 0 0 26px; gap: 20px; }
+  .hero .poster-title { position: static; font-size: clamp(76px, 22.7vw, 165px); line-height: .95; margin: 0; transform: none; max-width: 100%; }
+  .hero .poster-title > span { transform: none !important; }
+  .hero .hero-copy { display: block; position: static; max-width: none; margin: 24px 0 0; }
+  .hero .scroll-link { position: static; display: flex; min-height: 44px; max-width: none; margin: 18px 0 0; font-size: 11px; justify-content: space-between; }
+  .serial { display: none; }
+  .inside .chapter-copy, .material .chapter-copy, .make .chapter-copy { position: static; inset: auto; width: 100%; max-width: none; margin: 0; }
+  .chapter h2, .inside h2, .material h2, .make h2 { font-size: clamp(52px, 15vw, 100px); line-height: .97; }
+  .kicker { font-size: 11px; margin-bottom: 24px; }
+  .inside .chapter-copy > p, .chapter-copy > p { max-width: 34ch; font-size: 15px; margin-top: 24px; }
+  .inside .part-list { display: block; max-width: none; }
+  .part-list span { font-size: 12px; padding: 13px 0; }
+  .configurator { position: relative; inset: auto; transform: none; width: 100%; padding: 16px; margin: 20px 0 0; display: block; pointer-events: auto; }
+  .config-heading { display: flex; font-size: 12px; }
+  .swatches { margin: 12px 0; gap: 6px; padding: 0; }
+  .swatches .reset-view { display: block; }
+  .surface-row { display: flex; border-top: 1px solid #2633d433; padding-top: 8px; }
+  .surface-row > div { display: flex; gap: 12px; }
+  .surface-row button { font-size: 12px; min-height: 44px; }
+  .config-foot { display: flex; position: static; margin: 8px 0 0; }
+  .config-foot > span:first-child { display: block; max-width: 54%; font-size: 10px; }
+  .config-foot .rotate-touch { display: inline-block; min-height: 44px; font-size: 12px; }
+  .make .concept-label { max-width: none; font-size: 12px; }
+  .make footer { position: static; inset: auto; margin-top: 36px; display: flex; flex-wrap: wrap; gap: 20px; padding-bottom: env(safe-area-inset-bottom); font-size: 11px; }
+  .make footer > span { max-width: 160px; margin: 0; }
+  .make footer a:last-child { min-height: 44px; display: inline-flex; align-items: center; }
+  .make .footer-logo { font-size: 28px; }
+  .header-description { display: none; }
+  dialog h2 { font-size: 58px; }
+  dialog dl > div { font-size: 12px; }
+}
+
+@media (max-width: 900px), (max-width: 1000px) and (pointer: coarse) {
+  .mobile-scene-slot { position: relative; }
+  .mobile-scene-slot .fallback, .mobile-scene-slot .fallback-bike, .mobile-scene-slot .fallback-disc { position: absolute; inset: 0; transform: none; margin: auto; max-width: 90%; max-height: 90%; }
+  .mobile-scene-slot .fallback-bike { font-size: 28vw; padding-top: 35px; text-align: center; }
+  .mobile-scene-slot .fallback-disc { height: 80%; }
+  .no-webgl .chapter:not(.hero) .mobile-scene-slot { display: none; }
+}
+
+@media (max-width: 900px), (max-width: 1000px) and (pointer: coarse) {
+  .chapter, .closing, footer, .hero, .system, .lab, .brief {
+    padding-left: max(22px, env(safe-area-inset-left));
+    padding-right: max(22px, env(safe-area-inset-right));
+  }
+}
+
+@media (max-width: 900px), (max-width: 1000px) and (pointer: coarse) { .make footer { padding-left: 0; padding-right: 0; } }
+
+@media (max-width: 900px), (max-width: 1000px) and (pointer: coarse) {
+  .hero .poster-title > span:first-child { color: var(--blue); -webkit-text-stroke: 0; opacity: 1; }
+}
+
+@media (max-width: 900px) and (max-height: 500px), (max-width: 1000px) and (pointer: coarse) and (max-height: 500px) {
+  .mobile-scene-slot { height: min(280px, calc(100svh - 100px)); }
+}
